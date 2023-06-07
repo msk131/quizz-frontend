@@ -33,17 +33,17 @@ body{
     overflow-x: hidden;
     padding-bottom: 40px;
   }
-
+  
   .side-bar > li > a {
     color: #eee;
     width: 220px;
   }
-
+  
   .side-bar li a:hover,
   .side-bar li a:focus {
     background-color: #333;
   }
-
+  
   .tmargin {
     margin-top: 15px;
   }
@@ -64,7 +64,7 @@ body{
 
 .as-container{
   display:flex;
-
+  
   height:100%;
   justify-content:center;
   align-items:center;
@@ -72,12 +72,12 @@ body{
 .as-choice-card{
   position:relative;
   display:flex;
-
+  
   flex-direction: column;
   align-items:center;
   padding:72px 16px 32px 16px;
   width: 480px;
-
+  
   text-align: center;
   box-shadow: var(--elevation-1);
 
@@ -103,13 +103,13 @@ body{
 .as-card-icon{
   position:absolute;
   display:flex;
-
+  
   justify-content:center;
   align-items:center;
   width:72px;
   height:72px;
   top: -36px;
-
+  
   font-size: 25px;
   color:var(--light-color);
   background-color:var(--primary-color);
@@ -126,15 +126,20 @@ body{
   padding-bottom:32px;
   margin:0;
 }
-.as-card-cta {
+.as-card-cta{
   padding: 12px 36px;
-
-  border-radius: 30px;
-  border: none;
+  
+  border-radius:30px;
+  border:none;
   background-color: var(--primary-color);
   color: var(--light-color);
   box-shadow: var(--elevation-3);
   transition: ease-in-out .3s;
+}
+.as-choice-card:hover{
+}
+.as-choice-card:hover:after{
+
 }
 
 /* ------------------------- */
@@ -147,14 +152,14 @@ body{
   --elevation-3: 0px 3px 12px rgba(0, 0, 0, 0.08), 0px 3px 6px rgba(0, 0, 0, 0.12);
 }
 
-body{
+body{  
   font-family: "Roboto",sans-serif;
   color: var(--text-color);
    background-color: #CBD3F1;
 }
 .as-container{
   display:flex;
-
+  
   height:100%;
   justify-content:center;
   align-items:center;
@@ -163,16 +168,16 @@ body{
 .as-choice-card{
   position:relative;
   display:flex;
-
+  
   flex-direction: column;
   align-items:center;
   padding:72px 16px 32px 16px;
   width: 480px;
-
+  
   text-align: center;
   box-shadow: var(--elevation-1);
   background-color:#ffffff;
-
+  
   cursor: pointer;
 }
 .as-choice-card *{
@@ -182,12 +187,12 @@ body{
 .as-choice-card:after{
   content: '';
   position:absolute;
-
+  
   top:0;
   left:0;
   width:4px;
   height:100%;
-
+  
   background-color:var(--primary-color);
   transition: ease-in-out .3s;
   z-index:0;
@@ -195,13 +200,13 @@ body{
 .as-card-icon{
   position:absolute;
   display:flex;
-
+  
   justify-content:center;
   align-items:center;
   width:72px;
   height:72px;
   top: -36px;
-
+  
   font-size: 25px;
   color:var(--light-color);
   background-color:var(--primary-color);
@@ -220,7 +225,7 @@ body{
 }
 .as-card-cta{
   padding: 12px 36px;
-
+  
   border-radius:30px;
   border:none;
   background-color: var(--primary-color);

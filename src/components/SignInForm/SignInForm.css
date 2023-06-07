@@ -22,7 +22,6 @@
   font-family: 'Roboto',
   sans-serif;
   /* create a linear gradient*/
-  background-image: linear-gradient(to right, var(--body_gradient_left), var(--body_gradient_right));
   display:flex;
 }
 

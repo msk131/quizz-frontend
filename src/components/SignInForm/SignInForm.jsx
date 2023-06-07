@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './SignInForm.css';
 
-const API = 'https://quiz-spring-boot-app.herokuapp.com/authenticate';
+const API = 'http://localhost:8080/authenticate';
 
 class SignInForm extends Component {
 	constructor() {
@@ -56,13 +56,21 @@ class SignInForm extends Component {
 		return (
 			<div className="signup__page">
 				<form id="form_wrapper" onSubmit={this.handleSubmit}>
+
 					<div id="form_left">
+
 						<img
 							src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2017%2F02%2F11%2F22%2F41%2Fquiz-2058888_640.png&f=1&nofb=1"
 							alt="admin"
 						/>
+
 					</div>
+
 					<div id="form_right">
+						<img
+							src="/img.png"
+							alt="Clearwater Analytics"
+						/>
 						<h1 className="subtitle has-text-centered is-3">Enter your details</h1>
 						<div className="input_container">
 							<i className="fa fa-address-book-o" />

@@ -28,15 +28,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.subscribe_box}>
+<div>
+  <div className="navbar navbar-inverse navbar-fixed-top">
+      <div className="navbar-header"> <img
+          src="/img.png"
+          alt="Clearwater Analytics"
+      />
+      </div>
+  </div>
+
+  <div className={styles.subscribe_box}>
+
         <h2>Welcome to the Java Quiz</h2>
-        <h3>created by Zaiyr Sharsheev</h3>
         <form className={styles.subscribe} onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Your name or nickname" autocomplete="off" required="required" value={this.state.value} onChange={this.handleChange}/>
           <button type="submit"> <span>Start</span></button>
         </form>
         <a onClick={this.handleAdminSubmit} className={styles.btn_admin}>Are you admin?</a>
     </div>
+  </div>
     );
   }
 }

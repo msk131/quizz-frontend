@@ -2,16 +2,15 @@
 @import url('https://fonts.googleapis.com/css?family=Forum');
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700,900|Josefin+Slab:100,100i,300,300i,400,400i,600,600i,700,700i|Marcellus|Nanum+Myeongjo:400,700,800|Old+Standard+TT:400,400i,700|Prata|Vidaloka');
 body {
-  background: #F0F0F0;
+  background: #EFF;
   margin: 0;
   color: white;
 }
 .subscribe_box {
-  color: #fff;
+  color: #222;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #2bb24c;
   height: 100vh;
   font-family: 'Gothic A1', serif;
   padding: 15em 0;
@@ -49,7 +48,7 @@ body {
   outline: none;
 }
 .subscribe_box .subscribe input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(50, 50, 50, 0.5);
 }
 .subscribe_box .subscribe button {
   all: unset;

@@ -3,7 +3,7 @@ import React from 'react'
 import Question from './Question/Question'
 import './Question/Question.css'
 
-const API = 'https://quiz-spring-boot-app.herokuapp.com/questions/'
+const API = 'http://localhost:8080/module/1/questions/'
 
 export default class Quiz extends React.Component {
 
@@ -68,13 +68,17 @@ export default class Quiz extends React.Component {
     }
 
     return (
-      <section className="hero is-primary is-fullheight">
+      <section className="hero is-fullheight">
         <div className="hero-body">
           <div className="container">
             <div className="columns is-mobile is-centered">
               <div className="column is-half">
                 <div className="has-text-centered">
       <div>
+        <img
+            src="/img.png"
+            alt="Clearwater Analytics"
+        />
         <h1 className="title has-text-centered is-3">Java Quiz</h1>
         {completed ?
         <>

@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import Quiz from './components/Quiz/Quiz';
 import SignInForm from './components/SignInForm/SignInForm';
 import AdminPanel from './components/Admin/AdminPanel'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <BrowserRouter>

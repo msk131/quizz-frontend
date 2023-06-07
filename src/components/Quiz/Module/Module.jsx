@@ -1,7 +1,7 @@
 import React from 'react'
 import './Question.css';
 
-const Question = (props) => {
+const Module = (props) => {
 
   console.log(props)
   return (
@@ -24,4 +24,4 @@ const Question = (props) => {
   )
 }
 
-export default Question
+export default Module

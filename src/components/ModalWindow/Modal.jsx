@@ -1,7 +1,7 @@
 import React from "react";
 import './Modal.css';
 
-const API = 'https://quiz-spring-boot-app.herokuapp.com/questions/';
+const API = 'http://localhost:8080/questions/';
 
 export default class Modal extends React.Component {
     constructor() {
@@ -23,9 +23,6 @@ export default class Modal extends React.Component {
     
             option_4: "",
             correct_4: false,
-    
-            option_5: "",
-            correct_5: false,
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -55,7 +52,7 @@ export default class Modal extends React.Component {
   }
 
   handleSubmit(){
-    if(this.state.question && this.state.option_1 && this.state.option_2 && this.state.option_3 && this.state.option_4 && this.state.option_5)
+    if(this.state.question && this.state.option_1 && this.state.option_2 && this.state.option_3 && this.state.option_4)
     this.postQuestion();
   }
 
@@ -88,10 +85,6 @@ export default class Modal extends React.Component {
             {
               answerContent: this.state.option_4,
               correct: this.state.correct_4,
-            },
-            {
-              answerContent: this.state.option_5,
-              correct: this.state.correct_5,
             }
           ],
         },)
@@ -104,36 +97,28 @@ export default class Modal extends React.Component {
 
   modalContent = () => {
       return(
-        <div className="modal">
-            <h1>Create your question and check the correct answer(s)</h1>
-          <div className="modal-section">
-            <form className="question-section" onClick={this.handleSubmit}>
-                <input className="option" type="text" name="question" value={this.state.question} onChange={this.handleChange} placeholder="Question" required/>
-                <input className="option" type="text" name="option_1" value={this.state.option_1} onChange={this.handleChange} placeholder="Option №1" required/>
-                <input className="option" type="text" name="option_2" value={this.state.option_2} onChange={this.handleChange} placeholder="Option №2" required/>
-                <input className="option" type="text" name="option_3" value={this.state.option_3} onChange={this.handleChange} placeholder="Option №3" required/>
-                <input className="option" type="text" name="option_4" value={this.state.option_4} onChange={this.handleChange} placeholder="Option №4" required/>
-                <input className="option" type="text" name="option_5" value={this.state.option_5} onChange={this.handleChange} placeholder="Option №5" required/>
-                <input className="option" type="submit" value="Send" onClick={() => this.postQuestion}/>
-            </form>
-            <div className="checkbox-section">
-                <input type="checkbox" name="correct_1" value={this.state.correct_1} onChange={this.handleCorrectAnswerChange}/>
-                <input type="checkbox" name="correct_2" value={this.state.correct_1} onChange={this.handleCorrectAnswerChange}/>
-                <input type="checkbox" name="correct_3" value={this.state.correct_1} onChange={this.handleCorrectAnswerChange}/>
-                <input type="checkbox" name="correct_4" value={this.state.correct_1} onChange={this.handleCorrectAnswerChange}/>
-                <input type="checkbox" name="correct_5" value={this.state.correct_1} onChange={this.handleCorrectAnswerChange}/>
-            </div>
-          </div>  
-          <div>
-            <div className="modal-close" 
-              onClick={e => {
-                this.onClose(e);
-              }}
-            >
-              X
-            </div>
+
+          <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog"
+               aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div className="modal-dialog" role="document">
+                  <div className="modal-content">
+                      <div className="modal-header">
+                          <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div className="modal-body">
+                          ...
+                      </div>
+                      <div className="modal-footer">
+                          <button type="button" className="btn btn-secondary" data-dismiss="modal">Close
+                          </button>
+                          <button type="button" className="btn btn-primary">Save changes</button>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
       )
   }
 
