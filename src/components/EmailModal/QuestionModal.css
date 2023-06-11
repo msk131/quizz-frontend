@@ -1,0 +1,87 @@
+.modal {
+    position: fixed;
+	display: flex;
+	margin: 0 auto;
+	margin-top: 15%;
+	width: 500px;
+	background: white;
+	border: 1px solid #ccc;
+	transition: 1.1s ease-out;
+	box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
+	filter: blur(0);
+	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
+	z-index: 1000;
+}
+
+@supports (offset-rotate: 0deg) {
+	.modal {
+		offset-rotate: 0deg;
+		offset-path: path("M 250,100 S -300,500 -700,-200");
+	}
+}
+
+.modal h1 {
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.modal-section {
+    display: flex;
+}
+
+.modal-close{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: #000;
+}
+
+.option {
+	width: 400px;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+    margin-top: 10px;
+    border: 1px solid red;
+}
+
+input[name="question"]{
+    border: 3px solid #000;
+}
+
+.question-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.checkbox-section {
+	display: flex;
+	flex-direction: column;
+	margin-top: 60px;
+	margin-left: 10px;
+}
+
+input[type="checkbox"] {
+	margin-top: 20px;
+	width: 40px;
+	height: 40px;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  

@@ -3,7 +3,6 @@ import React from 'react'
 import Question from './Question/Question'
 import './Question/Question.css'
 
-const API = 'http://localhost:8080/module/1/questions/'
 
 export default class Quiz extends React.Component {
 
@@ -13,12 +12,18 @@ export default class Quiz extends React.Component {
         quiz: {},
         index: 0,
         answers: [],
-        name: ''
+        name: '',
+        moduleId:localStorage.getItem("moduleId")
       }
   }
 
-  componentDidMount() {
-    fetch(API)
+
+
+componentDidMount() {
+  this.setState({moduleId: localStorage.getItem('moduleId')});
+  const API = 'http://localhost:8080/module/'+this.state.moduleId+'/questions/'
+
+  fetch(API)
 		  .then(response => response.json())
       .then(result => {
         console.log(result)
@@ -28,7 +33,6 @@ export default class Quiz extends React.Component {
 
       this.setState({name: localStorage.getItem('name')});
   }
-
   handleSubmit() {
     if (this.state.index < this.state.quiz.length) {
       this.setState({'index': this.state.index + 1})
@@ -83,10 +87,14 @@ export default class Quiz extends React.Component {
         {completed ?
         <>
           <div>
-            <p className="title has-text-centered is-6">Congratulation, {this.state.name}! You have finished the Java Quiz!</p>
+            <p className="title has-text-centered is-6">Congratulation, {this.state.name}! You have finished the Quiz!</p>
             Your score is <strong>{score}</strong>
-            <button className="button is-primary is-inverted is-outlined is-rounded is-fullwidth" onClick={() => window.location.reload(false)}>Try again?</button>
-            <button className="button is-primary is-inverted is-outlined is-rounded is-fullwidth" onClick={() => this.logOut()}>Exit</button>
+          </div>
+          <div>
+            <button className="button is-primary is-outlined is-rounded m-1" onClick={() => window.location.reload(false)}>Try again?</button>
+          </div>
+          <div>
+            <button className="button is-primary is-outlined is-rounded m-1" onClick={() => this.logOut()}>Exit</button>
           </div>
           
         </>
@@ -101,7 +109,7 @@ export default class Quiz extends React.Component {
               onAnswerSelected={(event) => this.handleAnswerSelected(event)}
               onSubmit={() => this.handleSubmit()}
             />
-          : ''}
+              : <div><a href="/">No question set Yet <br/>Exit</a> </div>}
           </div>
         }
       </div>

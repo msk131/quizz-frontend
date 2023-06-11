@@ -8,6 +8,7 @@ import Quiz from './components/Quiz/Quiz';
 import SignInForm from './components/SignInForm/SignInForm';
 import AdminPanel from './components/Admin/AdminPanel'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import QuestionModal from "./components/QuestionModal/QuestionModal";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -16,6 +17,7 @@ ReactDOM.render(
           <Route path="/quiz" render={() => < Quiz />}/>
           <Route path="/login" render={() => < SignInForm /> }/>
           <Route path="/admin" render={() => < AdminPanel/> } />
+          <Route path="/create/question" render={() => < QuestionModal/> } />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
